@@ -1,19 +1,17 @@
 import { useForm } from '@conform-to/react'
 import { parseWithZod } from '@conform-to/zod'
 import {
-  json,
-  type ActionFunctionArgs,
-  type MetaFunction,
-} from '@remix-run/cloudflare'
-import { useActionData } from '@remix-run/react'
+  useActionData
+} from 'react-router'
 import { Resend } from 'resend'
 import ContactForm from '~/components/page-sections/contact-form'
 import Hero from '~/components/page-sections/hero'
 import Info from '~/components/page-sections/info'
 import Steps from '~/components/page-sections/steps'
 import { contactFormSchema } from '~/schemas/contact-form'
+import type { Route } from './+types/_index'
 
-export const meta: MetaFunction = () => {
+export function meta({}: Route.MetaArgs) {
   return [
     { title: 'New Remix App' },
     {
@@ -23,15 +21,16 @@ export const meta: MetaFunction = () => {
   ]
 }
 
-export async function action({ request }: ActionFunctionArgs) {
+export async function action({ request }: Route.ActionArgs) {
   const formData = await request.formData()
   const submission = parseWithZod(formData, { schema: contactFormSchema })
 
   if (submission.status !== 'success') {
-    return json(submission.reply())
+    return submission.reply()
   }
 
-  const resend = new Resend(process.env.RESEND_API_KEY)
+  // const resend = new Resend(process.env.RESEND_API_KEY)
+  const resend = new Resend(import.meta.env.RESEND_API_KEY)
 
   const { data, error } = await resend.emails.send({
     from: 'Contact Form <josh@longhorndesign.studio>',

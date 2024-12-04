@@ -1,4 +1,4 @@
-import { motion, useMotionValueEvent, useScroll } from 'framer-motion'
+import { motion, useMotionValueEvent, useScroll } from 'motion/react'
 import { useRef, useState } from 'react'
 import cowboyPolishingRevolver from '~/assets/cowboy-polishing-revolver.webp'
 import cowboyRanching from '~/assets/cowboy-ranching.webp'

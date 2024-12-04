@@ -1,5 +1,6 @@
-import { Link } from '@remix-run/react'
-import { motion } from 'framer-motion'
+import { motion } from 'motion/react'
+import { Link } from 'react-router'
+import brushStroke from '~/assets/brush-stroke.png'
 import canyonBackground from '~/assets/canyon-background.webp'
 import { TextEffect } from '../animations/text-effect'
 
@@ -106,7 +107,10 @@ export default function Hero() {
         >
           <Link
             to="/get-started"
-            className="bg-[url('app/assets/brush-stroke.png')] bg-contain bg-center bg-no-repeat px-16 py-6 text-lg font-semibold text-marzipan-200 transition-colors duration-200 hover:text-marzipan-100 sm:px-24 sm:py-8 sm:text-xl"
+            className="bg-contain bg-center bg-no-repeat px-16 py-6 text-lg font-semibold text-marzipan-200 transition-colors duration-200 hover:text-marzipan-100 sm:px-24 sm:py-8 sm:text-xl"
+            style={{
+              backgroundImage: `url(${brushStroke})`,
+            }}
           >
             Get Started
           </Link>

@@ -1,47 +1,71 @@
-# Welcome to Remix + Cloudflare!
+# Welcome to React Router!
 
-- 📖 [Remix docs](https://remix.run/docs)
-- 📖 [Remix Cloudflare docs](https://remix.run/guides/vite#cloudflare)
+A modern, production-ready template for building full-stack React applications using React Router.
 
-## Development
+## Features
 
-Run the dev server:
+- 🚀 Server-side rendering
+- ⚡️ Hot Module Replacement (HMR)
+- 📦 Asset bundling and optimization
+- 🔄 Data loading and mutations
+- 🔒 TypeScript by default
+- 🎉 TailwindCSS for styling
+- 📖 [React Router docs](https://reactrouter.com/)
 
-```sh
+## Getting Started
+
+### Installation
+
+Install the dependencies:
+
+```bash
+npm install
+```
+
+### Development
+
+Start the development server with HMR:
+
+```bash
 npm run dev
 ```
 
-To run Wrangler:
+Your application will be available at `http://localhost:5173`.
 
-```sh
+## Building for Production
+
+Create a production build:
+
+```bash
 npm run build
-npm run start
 ```
-
-## Typegen
-
-Generate types for your Cloudflare bindings in `wrangler.toml`:
-
-```sh
-npm run typegen
-```
-
-You will need to rerun typegen whenever you make changes to `wrangler.toml`.
 
 ## Deployment
 
-First, build your app for production:
+Deployment is done using the Wrangler CLI.
+
+To deploy directly to production:
 
 ```sh
-npm run build
+npx wrangler deploy
 ```
 
-Then, deploy your app to Cloudflare Pages:
+To deploy a preview URL:
 
 ```sh
-npm run deploy
+npx wrangler versions upload
+```
+
+You can then promote a version to production after verification or roll it out progressively.
+
+```sh
+npx wrangler versions deploy
 ```
 
 ## Styling
 
-This template comes with [Tailwind CSS](https://tailwindcss.com/) already configured for a simple default starting experience. You can use whatever css framework you prefer. See the [Vite docs on css](https://vitejs.dev/guide/features.html#css) for more information.
+This template comes with [Tailwind CSS](https://tailwindcss.com/) already configured for a simple default starting experience. You can use whatever CSS framework you prefer.
+
+---
+
+Built with ❤️ using React Router.

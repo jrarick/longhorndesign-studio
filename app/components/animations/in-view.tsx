@@ -1,11 +1,11 @@
 import {
   motion,
-  Transition,
+  type Transition,
   useInView,
-  UseInViewOptions,
-  Variant,
-} from 'framer-motion'
-import { ReactNode, useRef } from 'react'
+  type UseInViewOptions,
+  type Variant,
+} from 'motion/react'
+import { type ReactNode, useRef } from 'react'
 
 interface InViewProps {
   children: ReactNode

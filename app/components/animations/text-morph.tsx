@@ -1,5 +1,5 @@
-import { AnimatePresence, motion } from 'framer-motion'
-import { useMemo, useId } from 'react'
+import { AnimatePresence, motion } from 'motion/react'
+import { useId, useMemo } from 'react'
 import { cn } from '~/lib/utils'
 
 type TextMorphProps = {

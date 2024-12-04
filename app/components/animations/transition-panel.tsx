@@ -1,10 +1,10 @@
 import {
   AnimatePresence,
-  Transition,
-  Variant,
   motion,
-  MotionProps,
-} from 'framer-motion'
+  type MotionProps,
+  type Transition,
+  type Variant,
+} from 'motion/react'
 import { cn } from '~/lib/utils'
 
 type TransitionPanelProps = {

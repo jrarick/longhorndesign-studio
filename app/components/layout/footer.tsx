@@ -1,5 +1,5 @@
-import { motion } from 'framer-motion'
-import { SVGProps } from 'react'
+import { motion } from 'motion/react'
+import { type SVGProps } from 'react'
 
 const itemVariants = {
   hidden: {
